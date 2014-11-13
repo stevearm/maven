@@ -1,0 +1,41 @@
+<settings
+    xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                        http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <profiles>
+        <profile>
+            <id>general</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+            </properties>
+        </profile>
+    </profiles>
+
+    <servers>
+        <!--
+            Define public and private servers here. Use the same credentials for both.
+            Just cut and paste, since user-defined properties cannot be used here, so
+            you can't just define the creds in properties.
+
+            Make sure the user associated with these creds has "s3:*" permissions on
+            "arn:aws:s3:::horsefire.maven" and "arn:aws:s3:::horsefire.maven/*"
+        -->
+        <server>
+            <id>horsefire-public</id>
+            <username>########</username>
+            <password>########</password>
+            <filePermissions>PublicRead</filePermissions>
+        </server>
+        <server>
+            <id>horsefire-private</id>
+            <username>########</username>
+            <password>########</password>
+            <filePermissions>Private</filePermissions>
+        </server>
+    </servers>
+
+</settings>
